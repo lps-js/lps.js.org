@@ -1,0 +1,25 @@
+{
+  "name": "lps.js.org",
+  "version": "1.0.0",
+  "description": "The source repository for the website of lps.js at https://lps.js.org/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://lps.js.org/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauris/lps.js.org.git"
+  },
+  "author": {
+    "name": "Sam Yong",
+    "email": "samyonggit@gmail.com",
+    "url": "http://mauris.sg/"
+  },
+  "private": true,
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/mauris/lps.js.org/issues"
+  },
+  "homepage": "https://github.com/mauris/lps.js.org#readme"
+}
