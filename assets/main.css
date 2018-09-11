@@ -1,0 +1,47 @@
+.jumbotron {
+  background: #f7fffb
+}
+
+.textarea-code {
+  font-family: 'Consolas', 'Monaco', 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', 'Courier New', monospace;
+}
+
+.timeline {
+  overflow: auto;
+}
+
+.timeline-table {
+  margin-bottom: 0;
+
+  width: auto;
+  max-width: none;
+}
+
+.timeline-table td > div {
+  width: 200px;
+}
+
+.timeline-table th {
+  font-weight: bold;
+  border-right: 1px solid #ccc;
+}
+
+td.timeline-event > div, td.timeline-action > div {
+  position: relative;
+  left: -108px;
+  height: 24px;
+  width: 200px;
+  overflow: hidden;
+}
+td.timeline-event span, td.timeline-action span {
+  white-space: nowrap;
+}
+
+
+.timeline-table .timeline-fluent-box {
+  background: #fff2a0;
+  border: 1px solid #fff;
+  height: 32px;
+  padding: 2px 5px;
+}
