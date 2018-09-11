@@ -5,4 +5,4 @@ cd build
 git checkout master
 cd ..
 node ./node_modules/pug-cli/index.js -o build src
-cp -R src/assets build/assets
+cp -R src/assets build/
