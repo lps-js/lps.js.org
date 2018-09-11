@@ -3,7 +3,7 @@ html(lang="en")
   include shared/versions.pug
   head
     title Logic Production System (LPS) interpreter in JavaScript
-    link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/" + bootstrapVersion + "/css/bootstrap.min.css")
+    include shared/head-includes.pug
   body
     include shared/menu.pug
     .container-fluid
@@ -15,3 +15,62 @@ html(lang="en")
             hr
             p lps.js is the LPS interpreter implemented in JS. Want to see how lps.js works?
             a.btn.btn-primary.btn-lg(href="/sandbox/") Go to Sandbox
+    .container
+      .row
+        .col-md-4.col-sm-4
+          h2 Installing via npm
+          p Install lps.js for your server-side JS app via Node.js package manager (npm) by running the command:
+          p: code $ npm install lps --save
+          p Then in your code, <code>require()</code> lps.js and run a program file "program.lps" like this :
+          pre
+            code.
+              const LPS = require('lps');
+              LPS.loadFile('program.lps')
+                .then((engine) => {
+                    engine.run();
+                });
+          p Alternatively, a LPS program can also be loaded from string:
+          pre
+            code.
+              const LPS = require('lps');
+              LPS.loadString('...')
+                .then((engine) => {
+                    engine.run();
+                });
+        .col-md-4.col-sm-4
+          h2 Running as CLI
+          p Use the CLI Toolset to run LPS programs from the CLI:
+          p: code $ npm install -g lps-cli
+          p To run a LPS program file "program.lps", run:
+          p: code $ lps program.lps
+          ul
+            li lps
+            li lps-test
+            li lps-generate-spec
+            li lps-p2p-tracker
+          p: small For more information and help usage about the CLI Toolset, use the '<code>-v</code>' argument option for each of the available programs.
+        .col-md-4.col-sm-4
+          h2 Using for Frontend
+          p Download the lps.js release bundled for browsers from the <a href="https://github.com/mauris/lps.js/releases">Releases</a> page.
+          p Then, use the bundled file through the <code>&lt;script&gt;</code> tag:
+          p: code &lt;script src="lps.bundle.js"&gt;&lt;/script&gt;
+          p The LPS API is available through the global variable <code>LPS</code>:
+          pre
+            code.
+              LPS.loadFile('program.lps')
+                .then((engine) => {
+                    engine.run();
+                });
+          p Alternatively, a LPS program can also be loaded from string:
+          pre
+            code.
+              LPS.loadString('...')
+                .then((engine) => {
+                    engine.run();
+                });
+        .col-md-12.col-sm-12
+          hr
+        .col-md-12.col-sm-12
+          h2 LPS Studio
+          p.lead LPS Studio is the interactive storytelling tool for visualising LPS programs.
+          p Check out the LPS Studio project at <a href="https://github.com/mauris/lps-studio">its repository</a>.
