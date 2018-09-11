@@ -1,6 +1,7 @@
 doctype html
 html(lang="en")
   - const currentPage = 'sandbox';
+  - const lpsGitCommitHash = 'dd64f65';
   include ../shared/versions.pug
   head
     title lps.js Sandbox - Logic Production System (LPS) interpreter in JavaScript
@@ -17,20 +18,20 @@ html(lang="en")
             .dropdown.ml-3
               button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Example Programs
               .dropdown-menu#exampleProgramsList(aria-labelledby="dropdownMenuButton")
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/bank.lps", onclick="loadExample(this)") Bank
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/bubbleSort.lps", onclick="loadExample(this)") Bubble Sort
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/dining.lps", onclick="loadExample(this)") Dining Philosophers
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/fireSimple.lps", onclick="loadExample(this)") Fire (Simple)
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/fireRecurrent.lps", onclick="loadExample(this)") Fire (Recurrent)
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/guard.lps", onclick="loadExample(this)") Guard Dispatching
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/mark.lps", onclick="loadExample(this)") Mark Drinking Water
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/mark-hiccup.lps", onclick="loadExample(this)") Mark Hiccup
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/quickSort.lps", onclick="loadExample(this)") Quick Sort
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/prisoners.lps", onclick="loadExample(this)") Prisoners
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/shopping.lps", onclick="loadExample(this)") Shopping
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/towers.lps", onclick="loadExample(this)") Concurrent Towers
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/trash.lps", onclick="loadExample(this)") Trash
-                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/2cc4b63d/examples/turing.lps", onclick="loadExample(this)") Silly Dialogue
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/bank.lps", onclick="loadExample(this)") Bank
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/bubbleSort.lps", onclick="loadExample(this)") Bubble Sort
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/dining.lps", onclick="loadExample(this)") Dining Philosophers
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/fireSimple.lps", onclick="loadExample(this)") Fire (Simple)
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/fireRecurrent.lps", onclick="loadExample(this)") Fire (Recurrent)
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/guard.lps", onclick="loadExample(this)") Guard Dispatching
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/mark.lps", onclick="loadExample(this)") Mark Drinking Water
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/mark-hiccup.lps", onclick="loadExample(this)") Mark Hiccup
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/quickSort.lps", onclick="loadExample(this)") Quick Sort
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/prisoners.lps", onclick="loadExample(this)") Prisoners
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/shopping.lps", onclick="loadExample(this)") Shopping
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/towers.lps", onclick="loadExample(this)") Concurrent Towers
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/trash.lps", onclick="loadExample(this)") Trash
+                button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/turing.lps", onclick="loadExample(this)") Silly Dialogue
           #outputArea.timeline
       script(type="text/javascript", src="https://github.com/mauris/lps.js/releases/download/v" + lpsVersion + "/lps-" + lpsVersion + ".bundle.js")
       include ../shared/scripts.pug
