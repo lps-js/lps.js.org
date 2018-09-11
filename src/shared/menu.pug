@@ -1,0 +1,12 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-3
+	a.navbar-brand(href="https://lps.js.org") lps.js
+	span.navbar-text The LPS runtime in JS
+	
+	button.navbar-toggler(type="button", data-toggle="collapse", data-target="#mainNavBar", aria-controls="mainNavBar", aria-expanded="false", aria-label="Toggle navigation")
+		span.navbar-toggler-icon
+	#mainNavBar.collapse.navbar-collapse
+		.navbar-nav.ml-auto
+			a.nav-item.nav-link(href="/playground/") Playground
+			a.nav-item.nav-link(href="http://lps.doc.ic.ac.uk/") About LPS
+			a.nav-item.nav-link(href="https://github.com/mauris/lps.js") Github
+			span.nav-item.navbar-text.ml-3: small v#{lpsVersion}

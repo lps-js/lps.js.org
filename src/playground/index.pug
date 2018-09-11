@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  include ../shared/versions.pug
+  head
+    title Logic Production System (LPS) interpreter in JavaScript
+    link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/" + bootstrapVersion + "/css/bootstrap.min.css")
+  body
+    include ../shared/menu.pug
+    .container-fluid
+      .row
+        .col-md-12
+          .input-group.mb-3
+            textarea#codeInput.form-control(style="width: 100%; height: 300px;")
+          .input-group.mb-3
+              button.btn.btn-primary(onclick="runProgram()") Run Program
+          #outputArea
+      script(type="text/javascript", src="https://github.com/mauris/lps.js/releases/download/v" + lpsVersion + "/lps-" + lpsVersion + ".bundle.js")
+      include ../shared/scripts.pug
+    
