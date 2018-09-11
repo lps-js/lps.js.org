@@ -3,7 +3,25 @@ var txtCodeInput = document.getElementById('txtCodeInput');
 var btnRunProgram = document.getElementById('btnRunProgram');
 
 if (window.LPS === undefined) {
-  outputArea.innerHTML = 'You need to compile lps.bundle.js first by running the command "npm run build:browser".';
+  outputArea.innerHTML = 'For some reason, LPS is not available.';
+}
+
+function loadExample(element) {
+  var url = element.getAttribute('data-source');
+  var request = new XMLHttpRequest();
+  request.open('GET', url);
+  request.responseType = 'text';
+
+  request.onload = function() {
+    txtCodeInput.value = request.response;
+    txtCodeInput.disabled = false;
+    btnRunProgram.disabled = false;
+  };
+
+  txtCodeInput.value = 'Loading from ' + url;
+  txtCodeInput.disabled = true;
+  btnRunProgram.disabled = true;
+  request.send();
 }
 
 function buildTableForResults(result) {
@@ -76,7 +94,7 @@ function runProgram() {
       engine.setContinuousExecution(true);
 
       engine.on('error', (err) => {
-        // outputArea.innerHTML += '<p>Error: ' + err + '</p>';
+        outputArea.innerHTML += '<p>Error: ' + err + '</p>';
       });
       engine.on('postCycle', () => {
         result.push({
@@ -149,8 +167,6 @@ function runProgram() {
         btnRunProgram.disabled = false;
         let table = buildTableForResults(result);
         outputArea.appendChild(table);
-
-        console.log(result);
       });
 
       engine.run();
