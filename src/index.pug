@@ -16,6 +16,7 @@ html(lang="en")
           .input-group.mb-3
               button.btn.btn-primary(onclick="runProgram()") Run Program
           #outputArea
-      script(type="text/javascript", src="https://github.com/mauris/lps.js/releases/download/v1.0.2/lps.bundle.js")
+      - let lpsVersion = "1.0.15";
+      script(type="text/javascript", src="https://github.com/mauris/lps.js/releases/download/v" + lpsVersion + "/lps-" + lpsVersion + ".bundle.js")
       script(type="text/javascript", src="assets/main.js")
     
