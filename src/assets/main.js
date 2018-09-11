@@ -34,7 +34,7 @@ function buildTableForResults(result) {
   timeRow.innerHTML += '<th>Time</th>';
   for (let i = 0; i < result.length; i += 1) {
     var timeRowCell = document.createElement('td');
-    timeRowCell.innerHTML = '<div><span>' + result[i].time + ' (' + result[i].duration + ' ms)</span></div>'
+    timeRowCell.innerHTML = '<div><span>' + result[i].time + ' <small>(' + result[i].duration + ' ms)</small></span></div>'
     timeRow.appendChild(timeRowCell);
   }
   tableElement.appendChild(timeRow);
@@ -45,7 +45,8 @@ function buildTableForResults(result) {
     var eventsRowCell = document.createElement('td');
     eventsRowCell.classList.add('timeline-event');
     result[i].observations.forEach((event) => {
-      eventsRowCell.innerHTML += '<div>&bull; ' + event + '</div>';
+      var trimmedEvent = event.length > 20 ? (event.slice(0, 17) + '...') : event;
+      eventsRowCell.innerHTML += '<div title="' + event + '">&bull; ' + trimmedEvent + '</div>';
     });
     eventsRow.appendChild(eventsRowCell);
   }
@@ -57,7 +58,8 @@ function buildTableForResults(result) {
     var actionsRowCell = document.createElement('td');
     actionsRowCell.classList.add('timeline-action');
     result[i].actions.forEach((action) => {
-      actionsRowCell.innerHTML += '<div>&bull; ' + action + '</div>';
+      var trimmedAction = action.length > 20 ? (action.slice(0, 17) + '...') : action;
+      actionsRowCell.innerHTML += '<div title="' + action + '">&bull; ' + trimmedAction + '</div>';
     });
    actionsRow.appendChild(actionsRowCell);
   }
