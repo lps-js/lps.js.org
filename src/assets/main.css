@@ -1,5 +1,21 @@
 .jumbotron {
-  background: #f7fffb
+  background: #EFEFEF;
+}
+
+.jumbotron hr {
+  border-top: 1px solid rgba(255,255,255,.8);
+}
+
+.bg-theme {
+  background: #ff9000;
+}
+
+.btn-primary {
+  background: #ff9000;
+}
+
+.btn-primary {
+  border: 1px solid #bc6a00;
 }
 
 .textarea-code {
