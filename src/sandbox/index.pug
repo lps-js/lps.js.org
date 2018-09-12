@@ -17,7 +17,7 @@ html(lang="en")
           .input-group.mb-3
             button#btnRunProgram.btn.btn-primary(onclick="runProgram()") Run Program
             .dropdown.ml-3
-              button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Example Programs
+              button#dropdownMenuButton.btn.btn-light.dropdown-toggle(type="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Example Programs
               .dropdown-menu#exampleProgramsList(aria-labelledby="dropdownMenuButton")
                 button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/bank.lps", onclick="loadExample(this)") Bank
                 button.dropdown-item(data-source="https://cdn.rawgit.com/mauris/lps.js/" + lpsGitCommitHash + "/examples/bubbleSort.lps", onclick="loadExample(this)") Bubble Sort
