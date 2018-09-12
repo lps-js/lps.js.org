@@ -1,3 +1,29 @@
+.jumbotron h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+p.lead {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 576px) {
+  .jumbotron h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p.lead {
+    font-size: 1.32rem;
+  }
+}
+
 .jumbotron {
   background: #EFEFEF;
 }
