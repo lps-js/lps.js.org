@@ -30,6 +30,7 @@ function buildTableForResults(result) {
   tableElement.classList.add('table');
   tableElement.classList.add('table-striped');
 
+  // draw time headers
   var timeRow = document.createElement('tr');
   timeRow.innerHTML += '<th>Time</th>';
   for (let i = 0; i < result.length; i += 1) {
@@ -39,6 +40,7 @@ function buildTableForResults(result) {
   }
   tableElement.appendChild(timeRow);
 
+  // draw the event rows
   var eventsRow = document.createElement('tr');
   eventsRow.innerHTML += '<th>Events</th>';
   for (let i = 0; i < result.length; i += 1) {
@@ -52,6 +54,7 @@ function buildTableForResults(result) {
   }
   tableElement.appendChild(eventsRow);
 
+  // draw the actions row
   var actionsRow = document.createElement('tr');
   actionsRow.innerHTML += '<th>Actions</th>';
   for (let i = 0; i < result.length; i += 1) {
@@ -65,11 +68,13 @@ function buildTableForResults(result) {
   }
   tableElement.appendChild(actionsRow);
 
+  // draw the fluents row
   var fluentsRow = document.createElement('tr');
   fluentsRow.innerHTML += '<th>Fluents</th>';
   for (let i = 0; i < result.length; i += 1) {
     var fluentsRowCell = document.createElement('td');
     fluentsRowCell.classList.add('timeline-fluent');
+    // margin to account for previous timestamps's extending fluents
     var fluentsCellInnerDiv = document.createElement('div');
     fluentsCellInnerDiv.style.marginTop = (result[i].overlappingFluents * 32) + 'px';
     result[i].fluents.forEach((fluent) => {
@@ -93,11 +98,14 @@ function runProgram() {
       let profiler = engine.getProfiler();
       let result = [];
 
+      let executionProgressBar = document.getElementById('executionProgressBar');
+
       engine.setContinuousExecution(true);
 
       engine.on('error', (err) => {
-        outputArea.innerHTML += '<p>Error: ' + err + '</p>';
+        outputArea.innerHTML = '<p>Error: ' + err + '</p>';
       });
+
       engine.on('postCycle', () => {
         result.push({
           time: engine.getCurrentTime(),
@@ -158,6 +166,7 @@ function runProgram() {
               }
               newFluents.push(f);
             });
+          // ensure that fluents are sorted by the longest ones first
           newFluents.sort((a, b) => {
             if (a.length === b.length) {
               return 0;
@@ -174,6 +183,6 @@ function runProgram() {
       engine.run();
     })
     .catch((err) => {
-      outputArea.innerHTML += '<p>Error: ' + err + '</p>';
+      outputArea.innerHTML = '<p>Error: ' + err + '</p>';
     });
 }
