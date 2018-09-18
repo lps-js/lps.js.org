@@ -1,5 +1,4 @@
 #! /bin/sh
-./build.sh
 cd build
 git add -A
 git commit -m "Website automated build"

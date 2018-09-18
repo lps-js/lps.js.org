@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "./scripts/build.sh",
-    "publish": "./scripts/publish.sh",
+    "publish": "npm run build && ./scripts/publish.sh",
     "watch": "./scripts/watch.sh"
   },
   "homepage": "https://github.com/mauris/lps.js.org#readme",
