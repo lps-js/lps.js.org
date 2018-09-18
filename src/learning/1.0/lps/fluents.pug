@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  - const currentPage = 'learning';
+  include ../../../shared/versions.pug
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Fluents - Learning Resources - lps.js
+    include ../../../shared/head-includes.pug
+  body
+    include ../../../shared/menu.pug
+    .container-fluid
+      .row
+        .col-md-8.col-sm-8.col-lg-6
+          include ../header.pug
+          h2.display-4 Fluents
+          p Facts that can vary over time in LPS are called fluents and are associated with a cycle's timestamp. For example, the fact <code>ready(alice)</code> at time <code>2</code> can be represented as <code>ready(alice, 2)</code>. All fluents that hold in the same timestamp are considered to be part of the same state.
+
+          p The <code>initially/1</code> definition tells LPS about facts that should hold from time <code>1</code>. For example, suppose alice is ready from time 1, you can write:
+
+          pre.ml-3: code initially(ready(alice)).
+
+          p LPS's event theory provisions for the initiation and termination of fluents whenever an action is executed or an external event is observed. Without any initiation or termination, unaffected fluents will persist from the current state to the next state.
+
+          h3 Initiation
+          p When an event or action occurs, a fluent can be initiated using the <code>initiates/2</code> definition. For example, suppose the event <code>putdown(Person, Item)</code> initiates the fluent <code>onFloor(Item)</code>, you can write in LPS:
+
+          pre.ml-3: code initiates(putdown(Person, Item), onFloor(Item)).
+
+          h3 Termination
+          p Similarly, a fluent can be terminated using the <code>terminates/2</code> definition when an event or action occurs. For example, suppose the event <code>pickup(Person, Item)</code> terminates the fluent <code>onFloor(Item)</code>, you can write:
+
+          pre.ml-3: code terminates(pickup(Person, Item), onFloor(Item)).
+
+
+    include ../../../shared/scripts.pug
