@@ -4,7 +4,9 @@
   "description": "The source repository for the website of lps.js at https://lps.js.org/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./scripts/build.sh",
+    "publish": "./scripts/publish.sh",
+    "watch": "./scripts/watch.sh"
   },
   "homepage": "https://github.com/mauris/lps.js.org#readme",
   "repository": {
