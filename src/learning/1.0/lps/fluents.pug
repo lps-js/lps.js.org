@@ -12,7 +12,7 @@ html(lang="en")
       .row
         .col-md-8.col-sm-8.col-lg-6
           include ../header.pug
-          h2.display-4 Fluents
+          h2.display-4 Fluents and Event Theory
           p Facts that can vary over time in LPS are called fluents and are associated with a cycle's timestamp. For example, the fact <code>ready(alice)</code> at time <code>2</code> can be represented as <code>ready(alice, 2)</code>. All fluents that hold in the same timestamp are considered to be part of the same state.
 
           p The <code>initially/1</code> definition tells LPS about facts that should hold from time <code>1</code>. For example, suppose alice is ready from time 1, you can write:
@@ -26,10 +26,33 @@ html(lang="en")
 
           pre.ml-3: code initiates(putdown(Person, Item), onFloor(Item)).
 
+          p When there are conditions to the initiation, <code>initiates/2</code> can appear as the head of a logic program clause, where its conditions appear in the body of the clause. For example:
+
+          pre.ml-3: code
+            | initiates(putdown(Person, Item), onFloor(Item)) &lt;-
+            |   canBePlacedOnFloor(Item).
+
           h3 Termination
           p Similarly, a fluent can be terminated using the <code>terminates/2</code> definition when an event or action occurs. For example, suppose the event <code>pickup(Person, Item)</code> terminates the fluent <code>onFloor(Item)</code>, you can write:
 
           pre.ml-3: code terminates(pickup(Person, Item), onFloor(Item)).
+
+          p Like <code>initiates/2</code>, when there are conditions to the termination, <code>terminates/2</code> can appear as the head of a logic program clause, where its conditions appear in the body of the clause. For example:
+
+          pre.ml-3: code
+            | terminates(pickup(Person, Item), onFloor(Item)) &lt;-
+            |   canBePickedUp(Item).
+
+          h3 Updating
+          p If the initiation of a fluent depends on the termination of another fluent, the <code>updates/3</code> definition can be used  fluent can be terminated using the <code>terminates/2</code> definition when an event or action occurs. For example, suppose the event <code>pickup(Person, Item)</code> terminates the fluent <code>onFloor(Item)</code>, you can write a clause as such:
+
+          pre.ml-3: code
+            | updates(
+            |   transfer(FromPerson, ToPerson, Amount),   % action / event
+            |   balance(FromPerson, OldAmount),           % termating fluent
+            |   balance(FromPerson, NewAmount)            % initiating fluent
+            | ) &lt;-
+            |   NewAmount = OldAmount - Amount.
 
 
     include ../../../shared/scripts.pug
