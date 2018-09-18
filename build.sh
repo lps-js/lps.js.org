@@ -1,5 +1,5 @@
 #! /bin/sh
-git stash
+git stash --include-untracked
 rm -rf build
 git clone git@github.com:mauris/lps.js.org.git build
 cd build
