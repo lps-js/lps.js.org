@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  - const currentPage = 'learning';
+  include ../../../shared/versions.pug
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Introduction to LPS - Learning Resources - lps.js
+    include ../../../shared/head-includes.pug
+  body
+    include ../../../shared/menu.pug
+    .container-fluid
+      .row
+        .col-md-8.col-sm-8.col-lg-6
+          include ../header.pug
+          h2 Introduction to LPS
+          p LPS is a production system language for building reactive agents based on logic. An agent's goals are expressed using reactive rules, while the methods of reaching those goals -- i.e. its beliefs -- are expressed as logic programs. LPS combines both reactive rules and logic programming into a single framework using both forward reasoning in reactive rule processing and and backward reasoning in logic programs through SLD resolution.
+
+          p In LPS, reactive rules are in the form of "if <i>antecedent</i> then <i>consequent</i>". When the antecedent of reactive rules become true, the rules are said to be fired. During computation, LPS will select actions from the consequent of fired rules for execution and thus by modus ponens keeping the reactive rule true in the model.
+
+          p LPS also feature a database of facts that can be destructively updated based on executed actions as well as externally observed events. This database can represent the local worldview of a single agent or a shared blackboard of knowledge among several agents in the same context.
+
+          p The LPS framework was the result of research led by <a href="https://www.doc.ic.ac.uk/~rak/">Robert "Bob" Kowalski</a> and <a href="https://www.doc.ic.ac.uk/~fs/">Fariba Sadri</a> at <a href="http://lps.doc.ic.ac.uk/">Imperial College London</a> over the past decade, its interpreter implemented in Prolog by several contributors.
+
+    include ../../../shared/scripts.pug

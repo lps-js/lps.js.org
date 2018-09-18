@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  - const currentPage = 'learning';
+  - const docVersion = '1.0';
+  include ../../shared/versions.pug
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Learning Resources for lps.js v#{docVersion}
+    include ../../shared/head-includes.pug
+  body
+    include ../../shared/menu.pug
+    .container-fluid
+      .row
+        .col-md-12
+          h1
+            | Learning Resources
+            small.text-muted &nbsp;v#{docVersion}.x
+          hr
+          h2 Logic Production System (LPS)
+          ul
+            li: a(href="/learning/" + docVersion + "/lps/intro.html") Introduction to LPS
+            li Fluents
+            li Events and Actions
+            li Logic Program
+            li Reactive Rules
+            li: a(href="/learning/" + docVersion + "/lps/cycles.html") Cycles
+          h2 lps.js
+          ul
+            li Usage
+            li API Reference
+    include ../../shared/scripts.pug

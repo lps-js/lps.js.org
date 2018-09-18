@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  - const currentPage = 'learning';
+  include ../../../shared/versions.pug
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title LPS Cycles - Learning Resources - lps.js
+    include ../../../shared/head-includes.pug
+  body
+    include ../../../shared/menu.pug
+    .container-fluid
+      .row
+        .col-md-8.col-sm-8.col-lg-6
+          include ../header.pug
+          h2 Cycles
+          p LPS execution happens in discretely timestamped cycles. There are three steps that occur in each cycle:
+          ol
+            li Updating the database based on selected actions and observed events
+            li Process reactive rules
+            li Process goal clauses
+          p The database is updated destructively according to a domain-specific causal theory specified in the given LPS program. A selected action or externally observed event can either initiate a fluent, terminate a fluent or update a fluent.
+
+          h3 Halting Conditions
+          p Theorectically speaking, LPS cycles can go on infinitely without stopping. However, for practicality, there are several halting conditions of a LPS program:
+          ul
+            li The maximum execution time of the program has reached.
+            li Program specifically requested to halt.
+            li An error has occurred during the cycle.
+    include ../../../shared/scripts.pug

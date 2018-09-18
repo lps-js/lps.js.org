@@ -6,6 +6,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-theme.mb-3
 		span.navbar-toggler-icon
 	#mainNavBar.collapse.navbar-collapse
 		.navbar-nav.ml-auto
+			a.nav-item.nav-link(class=currentPage === 'learning' ? 'active' : '', href="/learning/") Learning
 			a.nav-item.nav-link(class=currentPage === 'sandbox' ? 'active' : '', href="/sandbox/") Sandbox
 			a.nav-item.nav-link(href="http://lps.doc.ic.ac.uk/") About LPS
 			a.nav-item.nav-link(href="https://github.com/mauris/lps.js") Github
