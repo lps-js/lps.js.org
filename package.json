@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/mauris/lps.js.org/issues"
   },
-  "homepage": "https://github.com/mauris/lps.js.org#readme"
+  "homepage": "https://github.com/mauris/lps.js.org#readme",
   "dependencies": {},
   "devDependencies": {
     "pug-cli": "^1.0.0-alpha6"
