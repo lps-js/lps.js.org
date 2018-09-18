@@ -12,7 +12,7 @@ html(lang="en")
       .row
         .col-md-8.col-sm-8.col-lg-6
           include ../header.pug
-          h2 Introduction to LPS
+          h2.display-4 Introduction to LPS
           p LPS is a production system language for building reactive agents based on logic. An agent's goals are expressed using reactive rules, while the methods of reaching those goals -- i.e. its beliefs -- are expressed as logic programs. LPS combines both reactive rules and logic programming into a single framework using both forward reasoning in reactive rule processing and and backward reasoning in logic programs through SLD resolution.
 
           p In LPS, reactive rules are in the form of "if <i>antecedent</i> then <i>consequent</i>". When the antecedent of reactive rules become true, the rules are said to be fired. During computation, LPS will select actions from the consequent of fired rules for execution and thus by modus ponens keeping the reactive rule true in the model.
