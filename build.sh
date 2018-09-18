@@ -1,4 +1,5 @@
 #! /bin/sh
+git stash
 rm -rf build
 git clone git@github.com:mauris/lps.js.org.git build
 cd build
@@ -10,3 +11,5 @@ cp CNAME build/
 cp -R src/assets build/
 cd build
 git add -A
+cd ..
+git stash pop
