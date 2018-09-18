@@ -11,11 +11,12 @@ html(lang="en")
     include ../../shared/menu.pug
     .container-fluid
       .row
-        .col-md-8.col-sm-8.col-lg-6
+        .col-md-12
           h1
             | Learning Resources
             small.text-muted &nbsp;v#{docVersion}.x
           hr
+        .col-md-8.col-sm-8.col-lg-6
           h2.display-4 LPS
           p The topics in this section contain learning resources relating to writing Logic Production System (LPS) programs.
           ul
@@ -25,8 +26,14 @@ html(lang="en")
             li Logic Program
             li Reactive Rules
             li: a(href="/learning/" + docVersion + "/lps/cycles.html") Cycles
+        .col-md-8.col-sm-8.col-lg-6
+          hr.d-lg-none
           h2.display-4 lps.js
           p The topics in this section contain resources relating to the use of lps.js in JavaScript.
           ul
             li API Reference
+        .col-md-8.col-sm-8.col-lg-6
+          hr
+          h2 Contributing
+          p Found an issue or mistake in the documentation? You can help by submitting a report to <a href="https://github.com/mauris/lps.js.org">our Github repository</a> or make a pull request to fix the problem.
     include ../../shared/scripts.pug
