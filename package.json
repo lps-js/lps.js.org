@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://lps.js.org/",
+  "homepage": "https://github.com/mauris/lps.js.org#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mauris/lps.js.org.git"
@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/mauris/lps.js.org/issues"
   },
-  "homepage": "https://github.com/mauris/lps.js.org#readme",
   "dependencies": {},
   "devDependencies": {
     "pug-cli": "^1.0.0-alpha6"
