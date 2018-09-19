@@ -13,3 +13,4 @@ cd build
 git add -A
 cd ..
 git stash pop
+exit 0
