@@ -4,7 +4,7 @@ html(lang="en")
   include ../../../shared/versions.pug
   head
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title Fluents - Learning Resources - lps.js
+    title Fluents and Event Theory - Learning Resources - lps.js
     include ../../../shared/head-includes.pug
   body
     include ../../../shared/menu.pug
@@ -14,6 +14,22 @@ html(lang="en")
           include ../header.pug
           h2.display-4 Fluents and Event Theory
           p Facts that can vary over time in LPS are called fluents and are associated with a cycle's timestamp. For example, the fact <code>ready(alice)</code> at time <code>2</code> can be represented as <code>ready(alice, 2)</code>. All fluents that hold in the same timestamp are considered to be part of the same state.
+
+          p To indicate that a term is a fluent, you need to use the <code>fluent/1</code> or <code>fluents/1</code> definition. For example:
+
+          pre.ml-3: code fluent(ready(Person)).
+
+          p Alternatively, you can also use a shorthand to indicate the number of arguments the fluent should have:
+
+          pre.ml-3: code fluent(ready/1).
+
+          p If you need to declare several fluents in one go, you can use the <code>fluents/1</code> definition by passing a list of fluent declarations as such:
+
+
+          pre.ml-3: code
+            | fluents([
+            |   ready/1
+            | ]).
 
           p The <code>initially/1</code> definition tells LPS about facts that should hold from time <code>1</code>. For example, suppose alice is ready from time 1, you can write:
 
