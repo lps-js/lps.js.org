@@ -13,12 +13,16 @@ html(lang="en")
         .col-md-8.col-sm-8.col-lg-6
           include ../header.pug
           h2.display-4 Logic Program
-          p LPS implements the SLD with negation as failure (SLDNF) in addition to Horn clauses. Hence, clauses in LPS can be either a definite clause or a definite denial (constraint).
-          p Similar to first order logic and Prolog, the LPS language can be used to write and express logic programs. For example, to indicate that curtains are flammable, we can write the fact as follows:
+
+          p LPS implements the SLD with negation as failure (SLDNF) in addition to Horn clauses. Similar to first order logic and Prolog, the LPS language can be used to write and express logic programs.
+
+          p A time-independent fact (i.e. not a <a href="fluents.html">fluent</a>) can be defined on its own in a LPS program. For example, to indicate that curtains are flammable, you can write the fact as:
 
           pre.ml-3: code flammable(curtains).
 
-          p To express a definite clause in the form "<i>conclusion</i> if <i>conditions</i>", you need to use the "&lt;-" <i>if</i> operator to separate the conclusion term (also known as the head of the clause) and conditions (also known as the body of the clause). For example to say that eliminating the fire is a way to deal with a fire occurring, you can write:
+          h3 Clauses
+
+          p To express a clause in the form "<i>conclusion</i> if <i>conditions</i>", you need to use the "&lt;-" <i>if</i> operator to separate the conclusion term (also known as the head of the clause) and conditions (also known as the body of the clause). For example to say that eliminating the fire is a way to deal with a fire occurring, you can write:
 
           pre.ml-3: code deal_with_fire(T1, T2) &lt;- eliminate(T1, T2).
 
@@ -30,7 +34,9 @@ html(lang="en")
             |   putOutFire(T2, T3),
             |   reportBack(P, T3, T4).
 
-          p To express a constraint (or formally definite denial), you can leave the the condition term (i.e. the head) to be empty. For example, to express that it is not possible for dispose trash using a bin if the bin is locked:
+          h3 Constraints
+
+          p To express a constraint (or formally definite denial), you can leave the the condition term (i.e. the head) to be empty. For example, to express that it is not possible to dispose trash into a bin while the bin is locked:
 
           pre.ml-3: code &lt;- dispose(_Trash, Bin), locked(Bin).
 
