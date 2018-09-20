@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  - const currentPage = 'learning';
+  include ../../../shared/versions.pug
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Reactive Rules - Learning Resources - lps.js
+    include ../../../shared/head-includes.pug
+  body
+    include ../../../shared/menu.pug
+    .container-fluid
+      .row
+        .col-md-8.col-sm-8.col-lg-6
+          include ../header.pug
+          h2.display-4 Reactive Rules
+
+          p Reactive rules in LPS have the form of "<code>if <i>antecedent</i> then <i>consequent</i></code>". A rule is said to have fired whenever conditions in its <code><i>antecedent</i></code> are met. When a rule is fired, LPS will attempt to find an instance of its consequent that holds by model generation and <a href="logic-program.html">logic programming</a>.
+
+    include ../../../shared/scripts.pug
