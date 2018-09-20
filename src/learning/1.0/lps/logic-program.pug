@@ -24,7 +24,7 @@ html(lang="en")
 
           h3 Clauses
 
-          p To express a clause in the form "<i>conclusion</i> if <i>conditions</i>", you need to use the "&lt;-" <i>if</i> operator to separate the conclusion term (also known as the head of the clause) and conditions (also known as the body of the clause). For example to say that eliminating the fire is a way to deal with a fire occurring, you can write:
+          p To express a clause in the form "<code><i>conclusion</i> if <i>conditions</i></code>", you need to use the "<code>&lt;-</code>" <i>if</i> operator to separate the conclusion term (also known as the head of the clause) and conditions (also known as the body of the clause). For example to say that eliminating the fire is a way to deal with a fire occurring, you can write:
 
           pre.ml-3: code deal_with_fire(T1, T2) &lt;- eliminate(T1, T2).
 
@@ -42,6 +42,6 @@ html(lang="en")
 
           pre.ml-3: code &lt;- dispose(_Trash, Bin), locked(Bin).
 
-          p Facts and clauses need to be terminated by a period symbol "." to indicate that the end of the fact/clause.
+          p Facts and clauses need to be terminated by a period symbol "<code>.</code>" to indicate that the end of the fact/clause.
 
     include ../../../shared/scripts.pug
