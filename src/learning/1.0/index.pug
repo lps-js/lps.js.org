@@ -15,9 +15,9 @@ html(lang="en")
           h1
             | Learning Resources
             small.text-muted &nbsp;for v#{docVersion}.x
+        .col-md-6.col-sm-12.col-lg-6
           hr
-        .col-md-8.col-sm-8.col-lg-6
-          h2.display-4 LPS Syntax
+          h2.display-4 Syntax
           p The topics in this section contain learning resources about understanding Logic Production System (LPS) syntax and writing LPS programs.
           ul
             li: a(href="/learning/" + docVersion + "/lps/intro.html") Introduction to LPS
@@ -26,13 +26,21 @@ html(lang="en")
             li: a(href="/learning/" + docVersion + "/lps/reactive-rules.html") Reactive Rules
             li: a(href="/learning/" + docVersion + "/lps/actions.html") Observations and Actions
             li: a(href="/learning/" + docVersion + "/lps/fluents.html") Fluents and Event Theory
-        .col-md-8.col-sm-8.col-lg-6
-          hr.d-lg-none
+        .col-md-6.col-sm-12.col-lg-6
+          hr
           h2.display-4 lps.js API
           p The topics in this section contain resources relating to the use of lps.js in JavaScript.
           ul
-            li API Reference
-        .col-md-8.col-sm-8.col-lg-6
+            li Main Library
+            li Engine Reference
+            li Tester Reference
+        .col-md-6.col-sm-12.col-lg-6
+          hr
+          h2.display-4 LPS Studio
+          p The topics in this section contain resources relating to the writing LPS programs for visualisation in LPS Studio.
+          ul
+            li Reference
+        .col-md-6.col-sm-12.col-lg-6
           hr
           h2 Contributing
           p Found an issue or mistake in the documentation? You can help by submitting a report to <a href="https://github.com/mauris/lps.js.org">our Github repository</a> or make a pull request to fix the problem.
