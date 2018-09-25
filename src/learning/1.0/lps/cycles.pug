@@ -15,10 +15,10 @@ html(lang="en")
           h2.display-4 Cycles
           p LPS execution happens in discretely timestamped cycles. There are three steps that occur in each cycle:
           ol
-            li Updating the database based on selected actions and observed events
-            li Process reactive rules
+            li Updating the database based on <a href="actions.html">selected actions and observed events</a>
+            li Process <a href="reactive-rules.html">reactive rules</a>
             li Process goal clauses
-          p The database is updated destructively according to a domain-specific causal theory specified in the given LPS program. A selected action or externally observed event can either initiate a fluent, terminate a fluent or update a fluent.
+          p The database is updated destructively according to a domain-specific causal theory specified in the given LPS program. An executed action or externally observed event can either initiate a fluent, terminate a fluent or update a fluent.
 
           h3 Halting Conditions
           p Theorectically speaking, LPS cycles can go on infinitely without stopping. However, for practicality, there are several halting conditions of a LPS program:
@@ -26,4 +26,12 @@ html(lang="en")
             li The maximum execution time of the program has reached.
             li Program specifically requested to halt.
             li An error has occurred during the cycle.
+
+          p The maximum number of cycles allowed for the execution of a LPS program can be set using the <code>maxTime/1</code> definition. By default, the maximum number of cycles allowed is <code>20</code> if no definition for <code>maxTime/1</code> is given. For example to set the maximum timestamp to <code>12</code>:
+
+          pre.ml-3: code maxTime(12).
+
+          p To specifically request for the program to be halted, the term <code>lpsHalt/0</code> can be used. Upon execution of the <code>lpsHalt/0</code>, the interpreter will finish the current cycle and stop execution. To write a rule that says if an event <code>operationComplete</code> was observed, the program halts:
+
+          pre.ml-3: code operationComplete(T1, T2) -&gt; lpsHalt.
     include ../../../shared/scripts.pug
