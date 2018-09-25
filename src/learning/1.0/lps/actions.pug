@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  - const currentPage = 'learning';
+  include ../../../shared/versions.pug
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Observations and Actions - Learning Resources - lps.js
+    include ../../../shared/head-includes.pug
+  body
+    include ../../../shared/menu.pug
+    .container-fluid
+      .row
+        .col-md-8.col-sm-8.col-lg-6
+          include ../header.pug
+          h2.display-4 Observations and Actions
+          p When a <a href="reactive-rules.html">reactive rule</a> is <i>fired</i>, LPS allows you to indicate actions that can be executed as part of model generation to fulfill the consequent of the reactive rule. An intelligent agent should also be able to observe externally events that had occurred and update their working memory based on these externally executed actions.
