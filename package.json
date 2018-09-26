@@ -6,7 +6,8 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "publish": "npm run build && ./scripts/publish.sh",
-    "watch": "./scripts/watch.sh"
+    "watch": "./scripts/watch.sh",
+    "diff": "./scripts/build.sh && ./scripts/diff.sh"
   },
   "homepage": "https://github.com/mauris/lps.js.org#readme",
   "repository": {
