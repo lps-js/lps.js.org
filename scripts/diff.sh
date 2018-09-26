@@ -1,4 +1,4 @@
 #! /bin/sh
 cd build
-git diff
+git status
 exit 0
